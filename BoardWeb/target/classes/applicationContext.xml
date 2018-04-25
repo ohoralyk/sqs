@@ -8,52 +8,18 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 	
-	
-	<!-- 
-	<bean id="tv" 		class="com.springbook.polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2700000" />
-	
-	<bean id="sony"		class="com.springbook.polymorphism.SonySpeaker"></bean>
-	<bean id="tv" 		class="com.springbook.polymorphism.LgTV"></bean>
-	
-	<context:component-scan base-package="com.springbook.polymorphism"/>
-	<bean id="apple" 	class="com.springbook.polymorphism.AppleSpeaker"></bean>
-	 -->
-	
-	<!-- DataSource 설정
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="org.h2.Driver" />
-		<property name="url" value="jdbc:h2:tcp://localhost/~/test" />
-		<property name="username" value="sa"></property>
-		<property name="password" value=""></property>
-	</bean>
-	 -->
-	 
-	 <!-- 
-	 <bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
-	 	<property name="userDAO" ref="userDAO" />
-	 </bean>
-	
-	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
-	  -->
 	  
 	 <context:component-scan base-package="com.springbook.biz" ></context:component-scan>
 	 
-	 <bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>
-	 <bean id="log1" class="com.springbook.biz.common.Log4jAdvice"></bean>
+	 <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	 
-	 <!-- Transaction 설정 -->
-	 <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-	 	<property name="entityManagerFactory" ref="entityManagerFactory"></property>
-	 </bean>
-	 
-	 <aop:config>
-	 	<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
-	 	<aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
-	 	
-	 	<aop:advisor pointcut-ref="allPointcut" advice-ref="txAdvice"/>
+<!--  	<aop:config> -->
+<!-- 	 	<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/> -->
+<!-- 	 	<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/> -->
 	 	
 <!-- 	 	<aop:aspect ref="log"> -->
-<!-- 	 		<aop:before method="printLog" pointcut-ref="allPointcut"/> -->
-<!-- 	 	</aop:aspect> -->
-	 </aop:config>
+<!-- 	 		<aop:before pointcut-ref="allPointcut" method="printLog"/> -->
+<!-- 	 	</aop:aspect>	 	 -->
+<!-- 	 </aop:config> -->
+
 </beans>
