@@ -9,10 +9,11 @@
 
 	//2. DB 연동 처리
 	BoardVO vo 	= new BoardVO();
+	
 	vo.setSeq(Integer.parseInt(seq));
 	
-	BoardDAO 	boardDAO 	= new BoardDAO();
-	BoardVO 	board 		= boardDAO.getBoard(vo);
+	BoardDAO boardDAO 	= new BoardDAO();
+	BoardVO board 		= boardDAO.getBoard(vo);
 	
 	//3. 응답 화면 구성
 %>
@@ -66,7 +67,7 @@
 		</form>
 		<hr>
 		<a href="insertBoard.jsp">글 등록</a>&nbsp;&nbsp;&nbsp;
-		<a href="deleteBoard.jsp">글 삭제</a>&nbsp;&nbsp;&nbsp;
+		<a href="deleteBoard_proc.jsp?seq=<%= board.getSeq() %>">글 삭제</a>&nbsp;&nbsp;&nbsp;
 		<a href="getBoardList.jsp">글 목록</a>
 	</center>
 </body>
