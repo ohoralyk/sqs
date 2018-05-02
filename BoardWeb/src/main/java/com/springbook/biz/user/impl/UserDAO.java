@@ -19,9 +19,8 @@ public class UserDAO{
 	private ResultSet rs;
 	
 	//SQL 명령어들
-	private static final String USER_GET = "select * from users where id=?";
+	private static final String USER_GET = "select * from users where id=? and password=?";
 	
-	/**
 	//CRUD 기능의 메소드 구현
 	//회원 등록
 	public UserVO getUser(UserVO vo) {
@@ -50,9 +49,10 @@ public class UserDAO{
 		
 		return user;
 	}
-	**/
+
 	
 	//회원 상세조회
+	/**
 	public UserVO getUser(UserVO vo) {
 		UserVO user = null;
 		
@@ -105,4 +105,5 @@ public class UserDAO{
 		
 		return user;
 	}
+	**/
 }

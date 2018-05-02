@@ -9,8 +9,6 @@
     <url-pattern>/hello.do</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>action</display-name>
     <servlet-name>action</servlet-name>
     <servlet-class>com.springbook.view.controller.DispatcherServlet</servlet-class>
   </servlet>
