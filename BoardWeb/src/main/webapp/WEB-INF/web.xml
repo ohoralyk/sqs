@@ -10,7 +10,11 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>action</servlet-name>
-    <servlet-class>com.springbook.view.controller.DispatcherServlet</servlet-class>
+    <servlet-class>com.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value>/WEB-INF/config/persentation-layer.xml</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>action</servlet-name>
