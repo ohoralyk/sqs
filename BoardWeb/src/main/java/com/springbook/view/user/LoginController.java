@@ -16,7 +16,7 @@ public class LoginController implements Controller {
 		System.out.println("로그인 처리");
 		
 		//1. 사용자 입력정보 추출
-		String id = request.getParameter("id");
+		String id 		= request.getParameter("id");
 		String password = request.getParameter("password");
 		
 		//2. DB 연동  처리
